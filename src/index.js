@@ -6,6 +6,8 @@ import Spinner from './Spinner';
 
 class App extends React.Component {
 
+  //sets state
+
   state = {lat: null, errorMessage: '' };
 
   componentDidMount() {
