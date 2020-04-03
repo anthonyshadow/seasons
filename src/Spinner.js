@@ -1,5 +1,7 @@
 import React from "react";
 
+//component
+
 const Spinner = (props) => {
   return (
     <div class="ui active dimmer">

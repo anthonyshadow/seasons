@@ -3,7 +3,7 @@ import './SeasonDisplay.css';
 import React from 'react';
 
 
-
+//different cofigurations for each season
 
 const seasonConfig = {
   summer: {
@@ -17,7 +17,7 @@ const seasonConfig = {
 }
 
 
-//function to determine the season based on hemisphere, if true latitude is greater than 0 (Northern hemisphere) Summer is true
+//helper function to determine the season based on hemisphere, if true latitude is greater than 0 (Northern hemisphere) Summer is true
 //if false it will display winter, the opposite is true for Southern Hemisphere
 
 
@@ -29,10 +29,16 @@ const getSeason = (lat, month) => {
   }
 }
 
+//component
+
 const SeasonDisplay = (props) => {
+
+  //help determine season that displays
 
   const season = getSeason(props.lat, new Date().getMonth());
   const {text, iconName} = seasonConfig[season];
+
+  //what the component will render
 
 
   return (

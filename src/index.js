@@ -15,9 +15,6 @@ class App extends React.Component {
     );
   }
 
-  componentDidUpdate() {
-    console.log("component updated")
-  }
 
   //helper function
 
@@ -43,7 +40,7 @@ class App extends React.Component {
 
   }
 
-
+//page rendering
   
   render() {
       
@@ -55,6 +52,8 @@ class App extends React.Component {
 
   };
 };
+
+//default props
 
 Spinner.defaultProps = {
   message: 'Loading...'
