@@ -19,27 +19,39 @@ class App extends React.Component {
     console.log("component updated")
   }
 
+  //helper function
+
+  renderContent() {
+
+    if (this.state.errorMessage && !this.state.lat) {
+      return (
+        <div>
+          Error: {this.state.errorMessage}
+        </div>
+      )
+    };
+
+    if (this.state.lat && !this.state.errorMessage) {
+      return (
+        <SeasonDisplay lat={this.state.lat} />
+      )
+    };
+
+    return (
+      <Spinner message="Please accept location Request"/>
+    )
+
+  }
+
 
   
   render() {
       
-      if (this.state.errorMessage && !this.state.lat) {
-        return (
-          <div>
-            Error: {this.state.errorMessage}
-          </div>
-        )
-      };
-
-      if (this.state.lat && !this.state.errorMessage) {
-        return (
-          <SeasonDisplay lat={this.state.lat} />
-        )
-      };
-
-      return (
-        <Spinner message="Please accept location Request"/>
-      )
+    return (
+      <div>
+        {this.renderContent()}
+      </div>
+    )
 
   };
 };
