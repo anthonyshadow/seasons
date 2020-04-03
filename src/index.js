@@ -1,7 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
 
-import SeasonDisplay from './SeasonDisplay'
+import SeasonDisplay from './SeasonDisplay';
+import Spinner from './Spinner';
 
 class App extends React.Component {
 
@@ -37,12 +38,14 @@ class App extends React.Component {
       };
 
       return (
-        <div>
-          Please wait your webpage is being loaded
-        </div>
+        <Spinner message="Please accept location Request"/>
       )
 
   };
+};
+
+Spinner.defaultProps = {
+  message: 'Loading...'
 };
 
 
